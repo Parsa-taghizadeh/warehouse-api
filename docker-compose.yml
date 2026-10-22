@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    container_name: warehouse_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite:////app/data/warehouse.db
+      SECRET_KEY: ${SECRET_KEY:?Set SECRET_KEY in .env}
+    volumes:
+      - ./data:/app/data

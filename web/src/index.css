@@ -1,0 +1,95 @@
+@import "tailwindcss";
+@import "vazirmatn/Vazirmatn-Variable-font-face.css";
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: #020617;
+  color: #f1f5f9;
+  font-family: 'Vazirmatn', ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background-color: rgba(56, 189, 248, 0.35);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 37%, #1e293b 63%);
+  background-size: 800px 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+/* Printed reports: plain black on white, no dark theme or decorations. */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 12mm;
+  }
+
+  html,
+  body,
+  #root {
+    height: auto;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .print-hide-decor {
+    display: none !important;
+  }
+
+  .report-page {
+    max-width: none;
+    padding: 0;
+  }
+
+  .report-page,
+  .report-page * {
+    color: #000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .report-chip,
+  .report-table-wrap {
+    border-color: #000 !important;
+  }
+
+  .report-table-wrap {
+    border-radius: 0;
+    border: none;
+  }
+
+  .report-table {
+    border-collapse: collapse;
+    font-size: 10pt;
+  }
+
+  .report-table th,
+  .report-table td {
+    border: 1px solid #000 !important;
+    padding: 4px 6px;
+  }
+
+  .report-table thead {
+    display: table-header-group; /* repeat the header row on every printed page */
+  }
+
+  .report-table tr {
+    break-inside: avoid;
+  }
+}

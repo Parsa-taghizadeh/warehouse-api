@@ -1,0 +1,15 @@
+venv/
+__pycache__/
+*.pyc
+warehouse.db
+secret.key
+web/node_modules/
+web-dist/
+.DS_Store
+data/
+Warehouse.app/
+server.log
+dist/
+warehouse-windows.zip
+backups/
+.env

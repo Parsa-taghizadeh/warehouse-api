@@ -1,0 +1,14 @@
+venv/
+__pycache__/
+__pycache__ 2/
+*.pyc
+.vscode/
+.vscode 2/
+.DS_Store
+.git/
+.env
+warehouse.db
+secret.key
+web/node_modules/
+web-dist/
+data/
